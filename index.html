@@ -33,43 +33,43 @@
             </ul>
         </div>
     </nav>
-
-    <section>
-        <form>
-            <div class="form-group">
-                <label for="library">Library</label>
-                <select class="form-control" id="library">
-                    <option value="ieee">IEEE Xplore</option>
-                    <option>ACM Digital Library</option>
-                    <option>Science Direct</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="operator-1">Operator [1]</label>
-                    <div class="input-group">
-                        <select class="form-control" id="operator-1">
-                            <option value="ieee">AND</option>
-                            <option>OR</option>
-                        </select>
-                    </div>
+    <div>
+        <section class="section-form">
+            <form>
+                <div class="form-group">
+                    <label for="library">Library</label>
+                    <select class="form-control" id="library">
+                        <option value="ieee">IEEE Xplore</option>
+                        <option>ACM Digital Library</option>
+                        <option>Science Direct</option>
+                    </select>
                 </div>
-                <div class="col-md-10">
+
+                <div class="form-group">
                     <label for="term-1">Term [1]</label>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="ieee()">
                     </div>
                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="new-terms"></div>
-            <br/>
-            <button type="button" class="btn btn-outline-success" onclick="addTerm()">+</button>
-            <button type="button" class="btn btn-outline-danger" onclick="removeTerm()">-</button>
-        </form>
-    </section>
+                <div class="clearfix"></div>
+                <div class="new-terms"></div>
+                <br />
+                <button type="button" class="btn btn-outline-success" onclick="addTerm()" title="Please, enter with term to add new term">+</button>
+                <button type="button" class="btn btn-outline-danger" onclick="removeTerm()">-</button>
+            </form>
+        </section>
 
-    <h1 id="string"></h1>
+        <section class="section-string">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Result</h5>
+                    <p class="card-text" id="string-title">Your string are showed here!</p>
+                    <a href="#" class="btn btn-primary">Go to ieee</a>
+                </div>
+            </div>
+
+        </section>
+
+        <h1 id="string"></h1>
 </body>
 </html>

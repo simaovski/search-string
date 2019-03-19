@@ -1,9 +1,8 @@
-﻿section
-{
+﻿section {
     margin: 20px 50px;
 }
 
-.col-md-10, .col-md-2{
+.col-md-10, .col-md-2 {
     float: left;
     padding: 0;
 }

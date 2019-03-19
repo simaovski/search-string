@@ -1,10 +1,12 @@
 var lastTerm = 2;
 
 function addTerm() {
+    if (!checkLastTerm()) {
     var rows = this.getCurrentRows();
     var newRow = this.replaceRow(lastTerm);
     $('.new-terms').html(rows + newRow);
-    lastTerm++;
+        lastTerm++;
+     }
 }
 
 function getCurrentRows() {
@@ -18,8 +20,8 @@ function replaceRow(id) {
                 <label for="operator-${id}">Operator [${id}]</label>
                 <div class="input-group">
                     <select class="form-control" id="operator-${id}">
-                        <option value="and">AND</option>
-                        <option value="or">OR</option>
+                        <option value="AND">AND</option>
+                        <option value="OR">OR</option>
                     </select>
                 </div>
             </div>
@@ -32,4 +34,8 @@ function replaceRow(id) {
         </div>
         <div class="clearfix"></div>`;
     return row;
+}
+
+function checkLastTerm() {
+    return ($.trim($(`#term-${lastTerm - 1}`).val()) === ''); 
 }
