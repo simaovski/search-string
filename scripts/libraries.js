@@ -3,11 +3,11 @@ var abstract = "ABSTRACT:";
 var keywords = "KEYWORDS:";
 
 function ieee() {
-    teste();
+    updateString();
 }
 
 
-function teste() {
+function updateString() {
     var stringTitle = "";
     for (var i = 1; i < lastTerm; i++) {
         var term = getTerm(i);
