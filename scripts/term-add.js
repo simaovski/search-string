@@ -2,9 +2,9 @@ var lastTerm = 2;
 
 function addTerm() {
     if (!checkLastTerm()) {
-    var rows = this.getCurrentRows();
-    var newRow = this.replaceRow(lastTerm);
-    $('.new-terms').html(rows + newRow);
+        var rows = this.getCurrentRows();
+        var newRow = this.replaceRow(lastTerm);
+        $('.new-terms').html(rows + newRow);
         lastTerm++;
      }
 }
@@ -19,7 +19,7 @@ function replaceRow(id) {
             <div class="col-md-2">
                 <label for="operator-${id}">Operator [${id}]</label>
                 <div class="input-group">
-                    <select class="form-control" id="operator-${id}">
+                    <select class="form-control" id="operator-${id}" onchange="updateString()">
                         <option value="AND">AND</option>
                         <option value="OR">OR</option>
                     </select>
@@ -28,7 +28,7 @@ function replaceRow(id) {
             <div class="col-md-10">
                 <label for="term-${id}">Term [${id}]</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter with a term [${id}]" id="term-${id}" onkeyup="ieee()">
+                    <input type="text" class="form-control" placeholder="Enter with a term [${id}]" id="term-${id}" onkeyup="updateString()">
                 </div>
             </div>
         </div>

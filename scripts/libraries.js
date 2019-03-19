@@ -2,26 +2,47 @@ var title = `"DOCUMENT-TITLE":`;
 var abstract = "ABSTRACT:";
 var keywords = "KEYWORDS:";
 
-function ieee() {
-    updateString();
+function updateLibrary() {
+    var library = $('#library').val();
+    if (library === 'ieee') {
+        title = `"DOCUMENT-TITLE":`;
+        abstract = "ABSTRACT:";
+        keywords = "KEYWORDS:";
+    }
 }
 
 
 function updateString() {
-    var stringTitle = "";
+    var stringSearch = "(";
     for (var i = 1; i < lastTerm; i++) {
         var term = getTerm(i);
+        document.getElementById(`term-${i}`).setAttribute('value', term);
         var operator = getOperator(i);
         term = configTerm(term);
-        if (operator != undefined)
-            stringTitle += ` ${operator} `
-        stringTitle += `${title} ${term}`;
+        if (operator != undefined) {
+            if (operator === 'AND')
+                stringSearch += `) ${operator} (`
+            else
+                stringSearch += ` ${operator} `;
+        }
+        stringSearch += `#key# ${term}`;
     }
-    $('#string-title').html(stringTitle);
+    stringSearch += ")";
+    updateAllStrings(stringSearch);
+}
+
+function updateAllStrings(stringTitle) {
+    $('#string-title').html(stringTitle.replace(/#key#/g, title));
+    $('#string-abstract').html(stringTitle.replace(/#key#/g, abstract));
+    $('#string-keywords').html(stringTitle.replace(/#key#/g, keywords));
+
 }
 
 function getTerm(position) {
-    return $(`#term-${position}`).val();
+    var term = $(`#term-${position}`).val();
+    if (($.trim(term) === ''))
+        return `""`;
+    return term;
 }
 
 function getOperator(position) {
