@@ -2,3 +2,12 @@
 {
     margin: 20px 50px;
 }
+
+.col-md-10, .col-md-2{
+    float: left;
+    padding: 0;
+}
+
+.col-md-2 {
+    padding-right: 15px;
+}

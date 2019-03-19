@@ -1,8 +1,10 @@
 function removeTerm() {
     if (isLastTerm())
         return;
-    else 
-        $(`#term-${--lastTerm}`).remove();    
+    else {
+        var term = --lastTerm;
+        $(`#row-${term}`).remove();
+    }
 }
 
 function isLastTerm() {

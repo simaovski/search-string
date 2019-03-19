@@ -13,6 +13,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="scripts/term-add.js"></script>
     <script src="scripts/term-remove.js"></script>
+
+    <script src="scripts/libraries.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,24 +39,37 @@
             <div class="form-group">
                 <label for="library">Library</label>
                 <select class="form-control" id="library">
-                    <option>IEEE Xplore</option>
+                    <option value="ieee">IEEE Xplore</option>
                     <option>ACM Digital Library</option>
                     <option>Science Direct</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="term">Term</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term">
+                <div class="col-md-2">
+                    <label for="operator-1">Operator [1]</label>
+                    <div class="input-group">
+                        <select class="form-control" id="operator-1">
+                            <option value="ieee">AND</option>
+                            <option>OR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <label for="term-1">Term [1]</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="ieee()">
+                    </div>
                 </div>
             </div>
-
+            <div class="clearfix"></div>
             <div class="new-terms"></div>
-
+            <br/>
             <button type="button" class="btn btn-outline-success" onclick="addTerm()">+</button>
             <button type="button" class="btn btn-outline-danger" onclick="removeTerm()">-</button>
         </form>
     </section>
+
+    <h1 id="string"></h1>
 </body>
 </html>
