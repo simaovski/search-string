@@ -1,6 +1,6 @@
 var lastTerm = 2;
 
-function addFirstTerm() {
+function addTerm() {
     var rows = this.getCurrentRows();
     var newRow = this.replaceRow(lastTerm);
     $('.new-terms').html(rows + newRow);
@@ -13,7 +13,7 @@ function getCurrentRows() {
 
 function replaceRow(id) {
     var row = 
-        `<div class="form-group">
+        `<div class="form-group" id="term-${id}">
             <label for="term-${id}">New term</label>
             <input type="text" class="form-control terms" placeholder="Enter with a term [${id}]" id="term-${id}">
         </div>`;
