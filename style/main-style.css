@@ -1,12 +1,17 @@
-﻿section {
-    margin: 20px 50px;
-}
-
-.col-md-10, .col-md-2 {
+﻿.col-md-10, .col-md-2 {
     float: left;
     padding: 0;
 }
 
 .col-md-2 {
     padding-right: 15px;
+}
+
+.card-title, 
+.card-text {
+    font-size: 12px;
+}
+
+.cards-container {
+    margin: 20px 40px;
 }

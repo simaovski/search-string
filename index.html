@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">How to use?</a>
@@ -33,53 +33,60 @@
             </ul>
         </div>
     </nav>
-    <section class="section-form">
-        <form>
-            <div class="form-group">
-                <label for="library">Library</label>
-                <select class="form-control" id="library" onchange="updateLibrary()">
-                    <option value="ieee">IEEE Xplore</option>
-                    <option>ACM Digital Library</option>
-                    <option>Science Direct</option>
-                </select>
+    <br/>
+    <div class="cards-container">
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="library">Library</label>
+                        <select class="form-control" id="library" onchange="updateLibrary()">
+                            <option value="ieee">IEEE Xplore</option>
+                            <option>ACM Digital Library</option>
+                            <option>Science Direct</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="term-1">Term [1]</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="updateString()">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="new-terms"></div>
+                    <br />
+                    <button type="button" class="btn btn-outline-success" onclick="addTerm()" data-toggle="tooltip" data-placement="bottom" title="Please, enter with term to add new term">+</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="removeTerm()">-</button>
+                </form>
             </div>
 
-            <div class="form-group">
-                <label for="term-1">Term [1]</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="updateString()">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">TITLE SEARCH</h5>
+                        <p class="card-text" id="string-title">Your string are showed here!</p>
+                        <!--<a href="#" class="btn btn-primary">Go to ieee</a>-->
+                    </div>
+                </div>
+                <br />
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ABSTRACT SEARCH</h5>
+                        <p class="card-text" id="string-abstract">Your string are showed here!</p>
+                        <!--<a href="#" class="btn btn-primary">Go to ieee</a>-->
+                    </div>
+                </div>
+                <br />
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">KEYWORDS SEARCH</h5>
+                        <p class="card-text" id="string-keywords">Your string are showed here!</p>
+                        <!--<a href="#" class="btn btn-primary">Go to ieee</a>-->
+                    </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="new-terms"></div>
-            <br />
-            <button type="button" class="btn btn-outline-success" onclick="addTerm()" data-toggle="tooltip" data-placement="bottom" title="Please, enter with term to add new term">+</button>
-            <button type="button" class="btn btn-outline-danger" onclick="removeTerm()">-</button>
-        </form>
-    </section>
-
-    <section class="section-string">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">TITLE</h5>
-                <p class="card-text" id="string-title">Your string are showed here!</p>
-                <a href="#" class="btn btn-primary">Go to ieee</a>
-            </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">ABSTRACT</h5>
-                <p class="card-text" id="string-abstract">Your string are showed here!</p>
-                <a href="#" class="btn btn-primary">Go to ieee</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">KEYWORDS</h5>
-                <p class="card-text" id="string-keywords">Your string are showed here!</p>
-                <a href="#" class="btn btn-primary">Go to ieee</a>
-            </div>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
