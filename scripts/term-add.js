@@ -19,7 +19,7 @@ function replaceRow(id) {
             <div class="col-md-2">
                 <label for="operator-${id}">Operator [${id}]</label>
                 <div class="input-group">
-                    <select class="form-control" id="operator-${id}" onchange="updateString()">
+                    <select class="form-control" id="operator-${id}" onchange="updateLibrary()">
                         <option value="AND">AND</option>
                         <option value="OR">OR</option>
                     </select>
@@ -28,7 +28,7 @@ function replaceRow(id) {
             <div class="col-md-10">
                 <label for="term-${id}">Term [${id}]</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter with a term [${id}]" id="term-${id}" onkeyup="updateString()">
+                    <input type="text" class="form-control" placeholder="Enter with a term [${id}]" id="term-${id}" onkeyup="updateLibrary()">
                 </div>
             </div>
         </div>

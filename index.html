@@ -19,14 +19,14 @@
                         <select class="form-control" id="library" onchange="updateLibrary()">
                             <option value="ieee">IEEE Xplore</option>
                             <option value="acm">ACM Digital Library</option>
-                            <option>Science Direct</option>
+                            <option value="scienceDirect">Science Direct</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="term-1">Term [1]</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="updateString()">
+                            <input type="text" class="form-control" placeholder="Enter with a term [1]" id="term-1" onkeyup="updateLibrary()">
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -73,6 +73,9 @@
 <script src="scripts/term-add.js"></script>
 <script src="scripts/term-remove.js"></script>
 <script src="scripts/libraries.js"></script>
+<script src="scripts/libraries/ieee.js"></script>
+<script src="scripts/libraries/acm.js"></script>
+<script src="scripts/libraries/scienceDirect.js"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136579805-1"></script>
 <script>
