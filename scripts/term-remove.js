@@ -4,7 +4,7 @@ function removeTerm() {
     else {
         var term = --lastTerm;
         $(`#row-${term}`).remove();
-        updateString();
+        updateLibrary();
     }
 }
 

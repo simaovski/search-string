@@ -14,6 +14,7 @@ function updateInputValues(term, operator, i) {
         document.getElementById(`operator-${i}`).setAttribute('value', operator);
 }
 
+
 function getTerm(position) {
     var term = $(`#term-${position}`).val();
     if (($.trim(term) === ''))
