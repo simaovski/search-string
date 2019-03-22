@@ -16,7 +16,7 @@ function getCurrentRows() {
 function replaceRow(id) {
     var row =
         `<div class="form-group" id="row-${id}">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label for="operator-${id}">Operator [${id}]</label>
                 <div class="input-group">
                     <select class="form-control" id="operator-${id}" onchange="updateLibrary()">
@@ -25,7 +25,7 @@ function replaceRow(id) {
                     </select>
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <label for="term-${id}">Term [${id}]</label>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Enter with a term [${id}]" id="term-${id}" onkeyup="updateLibrary()">
