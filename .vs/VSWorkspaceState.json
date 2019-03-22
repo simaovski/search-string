@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\scripts",
+    "\\scripts\\libraries",
     "\\style"
   ],
-  "SelectedNode": "\\about.html",
+  "SelectedNode": "\\scripts\\libraries.js",
   "PreviewInSolutionExplorer": false
 }
